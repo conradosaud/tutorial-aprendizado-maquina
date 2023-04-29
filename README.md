@@ -41,6 +41,7 @@ Mas se for montar do zero o projeto sem usar esse repositório, será necessári
 - [TensorFlow](https://www.tensorflow.org/) (`pip install tensorflow`): ambiente de desenvolvimento de aprendizado de máquina. A instalação desse pacote pode demorar.
 - [Pandas](https://pandas.pydata.org/) (`pip install pandas`): pacote de análise da dados e DataFrames
 - [scikit-learn](https://scikit-learn.org/stable/) (`pip install -U scikit-learn`): para importação dos algoritmos de aprendizado de máquina
+- [matplotlib](https://matplotlib.org/) (`pip install matplotlib`): cria gráficos para plotar os dados
 
 Vale lembrar que no tutorial do _Tech With Tim_ e em outros tutoriais mais antigos, é instalado o _SKLearn_ invés do scikit-learn. Agora é usado o scikit-learn. Além disso, outros pacotes, como o _NumPy_ e _Keras_ já vem instalado por padrão e não precisa ser baixado.
 \- _Lembre-se de instalar todos esses pacotes no ambiente virtual._
@@ -71,3 +72,22 @@ Se não acontecer nenhum erro, quer dizer que o ambiente já está rodando e já
 Para testar os algoritmos de aprendizado de máquina é necessário ter uma base de dados sólida que possamos trabalhar. Existem bases espalhadas na internet, mas o site [UCI Machine Learning Repository](https://archive.ics.uci.edu/ml/index.php) é uma boa opção para encontrar base de dados para trabalhar com aprendizado de máquina.
 
 Neste repositório, estou usando o [Student Performance Data Set](https://archive.ics.uci.edu/ml/datasets/Student+Performance), uma base de dados que abordam o desempenho dos alunos no ensino secundário de duas escolas portuguesas, e que são bons para trabalhar treinando os modelos.
+
+## Salvar modelos de treinamento no pickle
+
+Após treinar um modelo e obter uma boa acurácia, podemos salvar as predições de um modelo e carregá-las posteriormente sem precisar treinar novamente. Para isso é usado a biblioteca [pickle](https://docs.python.org/3/library/pickle.html) do Python (já padrão do Python).
+
+Após treinar o modelo, basta salvá-lo no pickle usando:
+```
+with open("nome_do_arquivo.pickle", "wb") as f:
+    pickle.dump(modelo, f)
+```
+
+Em seguida, para abrir o modelo treinado:
+
+```
+pickle_in = open("nome_do_arquivo.pickle", "rb")
+modelo = pickle.load(pickle_in)
+```
+
+Vale lembrar que é interessante salvar o __melhor modelo__ de predição de dados. Para isso, pode-se fazer uma lógica simples, usando um loop no código buscando qual é o modelo de maior acurácia e salvar cada laço do loop que for maior do que o anterior.
