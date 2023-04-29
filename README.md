@@ -5,6 +5,14 @@ Este é meu repositório para estudar aprendizado de máquina na prática do zer
 Estou seguindo o curso __Python Machine Learning__ do canal _Tech With Tim_
 - [Acessar playlist](https://www.youtube.com/playlist?list=PLzMcBGfZo4-mP7qA9cagf68V06sko5otr)
 
+### Algoritmos de aprendizado de máquina
+
+Cada algoritmo de aprendizado de máquina que foi estudado está separado em uma pasta diferente. Cada pasta tem seu próprio arquivo _readme_ e nele há informações sobre como cada algoritmo funciona, além de explicações específicas do código.
+
+Os algoritmos que foram estudados são:
+- [Linear Regression (Regressão Linear)](./Linear%20Regression/)
+- [KNN (K-Nearest Neighbors)](./KNN/)
+
 ## Ambiente de desenvolvimento
 
 Para este projeto, está sendo usado os seguintes ambientes:
@@ -70,8 +78,6 @@ Se não acontecer nenhum erro, quer dizer que o ambiente já está rodando e já
 ## Base de dados
 
 Para testar os algoritmos de aprendizado de máquina é necessário ter uma base de dados sólida que possamos trabalhar. Existem bases espalhadas na internet, mas o site [UCI Machine Learning Repository](https://archive.ics.uci.edu/ml/index.php) é uma boa opção para encontrar base de dados para trabalhar com aprendizado de máquina.
-
-Neste repositório, estou usando o [Student Performance Data Set](https://archive.ics.uci.edu/ml/datasets/Student+Performance), uma base de dados que abordam o desempenho dos alunos no ensino secundário de duas escolas portuguesas, e que são bons para trabalhar treinando os modelos.
 
 ## Salvar modelos de treinamento no pickle
 
